@@ -32,19 +32,17 @@ class SMCSegmentation(BaseMMSeg):
         return classes, palette
 
     def update_default_config(self, config):
-        root_dir = dataset_dir()
-        path = Path(root_dir)
-        if self.split == "train":
-            config.data.train.data_root = path / "train/images"
-            config.data.train.ann_dir = path / "train/labels"
-        elif self.split == "val":
-            config.data.val.data_root = path / "train/images"
-            config.data.val.ann_dir = path / "train/labels"
-        elif self.split == "test":
-            config.data.test.data_root = path / "test/images"
-            config.data.test.ann_dir = path / "test/labels"
-        config = super().update_default_config(config)
-        return config
+            root_dir = dataset_dir()
+            path = Path(root_dir)
+            if self.split == "train":
+                config.data.train.split_file = path / "splits/train.txt"
+            elif self.split == "val":
+                config.data.val.split_file = path / "splits/val.txt"
+            elif self.split == "test":
+                config.data.test.split_file = path / "splits/test.txt"
+            config = super().update_default_config(config)
+            return config
+
 
     def test_post_process(self, labels):
         """테스트 시 후처리 단계 (필요 시 사용자 정의)."""
