@@ -4,6 +4,7 @@ from segm.data import ImagenetDataset
 from segm.data import ADE20KSegmentation
 from segm.data import PascalContextDataset
 from segm.data import CityscapesDataset
+from segm.data import SMCSegmentation
 from segm.data import Loader
 
 
