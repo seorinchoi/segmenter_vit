@@ -24,6 +24,8 @@ def create_dataset(dataset_kwargs):
         dataset = PascalContextDataset(split=split, **dataset_kwargs)
     elif dataset_name == "cityscapes":
         dataset = CityscapesDataset(split=split, **dataset_kwargs)
+    elif dataset_name == "smc":
+        dataset = SMCSegmentation(split=split, **dataset_kwargs)
     else:
         raise ValueError(f"Dataset {dataset_name} is unknown.")
 
