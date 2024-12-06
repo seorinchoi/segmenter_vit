@@ -5,8 +5,8 @@ from segm.config import dataset_dir
 import yaml
 
 # SMC 데이터셋에 대한 설정 파일 경로
-SMC_CONFIG_PATH = Path(__file__).parent / "config" / "smc_dataset.py"
-SMC_CATS_PATH = Path(__file__).parent / "config" / "smc_dataset.yml"
+SMC_CONFIG_PATH = Path(__file__).parent / "config" / "smc.py"
+SMC_CATS_PATH = Path(__file__).parent / "config" / "smc.yml"
 
 class SMCSegmentation(BaseMMSeg):
     def __init__(self, image_size, crop_size, split, **kwargs):
