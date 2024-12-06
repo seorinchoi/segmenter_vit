@@ -1,7 +1,6 @@
 # dataset settings
 dataset_type = "SMCdataset"
 data_root = '/content/drive/MyDrive/SMC/'
-test_data_root = '/content/drive/MyDrive/SMC/test/'
 img_norm_cfg = dict(
     mean=[127.5, 127.5, 127.5], std=[127.5, 127.5, 127.5], to_rgb=True
 )
@@ -86,9 +85,9 @@ data = dict(
     ),
     test=dict(
         type=dataset_type,
-        data_root=test_data_root,
-        img_dir="images",
-        ann_dir="labels",
+        data_root=data_root,
+        img_dir="test/images",
+        ann_dir="test/labels",
         pipeline=test_pipeline,
         classes=classes,
         palette=palette,
